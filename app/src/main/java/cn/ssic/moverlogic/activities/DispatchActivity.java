@@ -26,7 +26,7 @@ import cn.ssic.moverlogic.netokhttp3.RxResultHelper;
  * @E-mail:377855879@qq.com
  */
 
-public class DispatchActivity extends BaseActivity {
+public class DispatchActivity extends BaseActivity {  //
 
     @BindView(R.id.base_title_left)
     TextView baseTitleLeft;
