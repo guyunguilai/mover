@@ -36,6 +36,7 @@ import cn.ssic.moverlogic.App;
 import cn.ssic.moverlogic.BrowseFileActivity;
 import cn.ssic.moverlogic.MainActivity;
 import cn.ssic.moverlogic.R;
+import cn.ssic.moverlogic.activities.JobSheet;
 import cn.ssic.moverlogic.bean.GetJobSheetRespBean;
 import cn.ssic.moverlogic.bean.GetRosterJobRespBean;
 import cn.ssic.moverlogic.fragment.JobFragment;
@@ -52,10 +53,10 @@ import rx.Subscription;
  * Created by Administrator on 2016/9/14.
  */
 public class JobSheetInfoScrollAdapter extends PagerAdapter {
-    MainActivity mActivity;
+    JobSheet mContext;
+    private int jobId;
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 1;
-    Job mJob;
-    JobFragment mJobFragment;
+
     int itemIds[] = {
             R.layout.fragment_roster_item0,
             R.layout.fragment_jobsheet_item1,
@@ -73,11 +74,11 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
     };
     GetJobSheetRespBean mGetJobSheetRespBean;
 
-    public JobSheetInfoScrollAdapter(MainActivity c, Job job, JobFragment fragment) {
-        mActivity = c;
-        mJob = job;
-        mJobFragment = fragment;
-        loadJobInfo(mJob.getJobId());
+    public JobSheetInfoScrollAdapter(JobSheet c,int jobId) {
+        mContext = c;
+        this.jobId = jobId;
+
+        loadJobInfo(jobId);
     }
 
     private void loadJobInfo(int jobid) {
@@ -88,22 +89,22 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                 .subscribe(jobSheet -> {
                     Logger.e(jobSheet.getMsg());
                     mGetJobSheetRespBean = jobSheet;
-                    Toast.makeText(mActivity, "jobSheet success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "jobSheet success", Toast.LENGTH_SHORT).show();
                     notifyDataSetChanged();
                 }, throwable -> {
-                    Toast.makeText(mActivity, throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, throwable.getMessage(), Toast.LENGTH_SHORT).show();
                     Logger.e(throwable.getMessage());
                 });
     }
 
     void refreshItsself() {
-        loadJobInfo(mJob.getJobId());
+        loadJobInfo(jobId);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        View view = LayoutInflater.from(mActivity).inflate(itemIds[position], container, false);
+        View view = LayoutInflater.from(mContext).inflate(itemIds[position], container, false);
         if (null == mGetJobSheetRespBean) {
             return view;
         }
@@ -122,7 +123,7 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                 viewHolder.ll2.removeAllViews();
                 GetRosterJobRespBean.ContactDetailsBean details = mGetJobSheetRespBean.getContactDetails();
                 for (int i = 0; i < details.getContact().size(); i++) {
-                    View inflate = View.inflate(mActivity, R.layout.contact, null);
+                    View inflate = View.inflate(mContext, R.layout.contact, null);
                     TextView nameTv = (TextView) inflate.findViewById(R.id.name);
                     TextView mContact = (TextView) inflate.findViewById(R.id.roster_contact);
                     TextView email1Tv = (TextView) inflate.findViewById(R.id.email1);
@@ -135,18 +136,18 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                     email2Tv.setText(details.getContact().get(i).getEmail2() == null ? "" : details.getContact().get(i).getEmail2());
                     phone1.setText(details.getContact().get(i).getPhone1() == null ? "" : details.getContact().get(i).getPhone1());
                     phone2.setText(details.getContact().get(i).getPhone2() == null ? "" : details.getContact().get(i).getPhone2());
-                    phone1.setTextColor(mActivity.getResources().getColor(R.color.phone_color));
-                    phone2.setTextColor(mActivity.getResources().getColor(R.color.phone_color));
+                    phone1.setTextColor(mContext.getResources().getColor(R.color.phone_color));
+                    phone2.setTextColor(mContext.getResources().getColor(R.color.phone_color));
                     int j =i;
                     phone1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            new AlertDialog(mActivity).builder().setTitle(details.getContact().get(j).getPhone1())
+                            new AlertDialog(mContext).builder().setTitle(details.getContact().get(j).getPhone1())
                                     .setPositiveButton("call", new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            if (ActivityCompat.checkSelfPermission(mActivity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                                                if (ActivityCompat.shouldShowRequestPermissionRationale(mActivity,
+                                            if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                                if (ActivityCompat.shouldShowRequestPermissionRationale(mContext,
                                                         Manifest.permission.CALL_PHONE)) {
                                                     // 返回值：
                                                     //                          如果app之前请求过该权限,被用户拒绝, 这个方法就会返回true.
@@ -157,12 +158,12 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
 
                                                     // 帮跳转到该应用的设置界面，让用户手动授权
                                                     Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                                                    Uri uri = Uri.fromParts("package", mActivity.getPackageName(), null);
+                                                    Uri uri = Uri.fromParts("package", mContext.getPackageName(), null);
                                                     intent.setData(uri);
-                                                    mActivity.startActivity(intent);
+                                                    mContext.startActivity(intent);
                                                 }else{
                                                     // 不需要解释为何需要该权限，直接请求授权
-                                                    ActivityCompat.requestPermissions(mActivity,
+                                                    ActivityCompat.requestPermissions(mContext,
                                                             new String[]{Manifest.permission.CALL_PHONE},
                                                             MY_PERMISSIONS_REQUEST_CALL_PHONE);
                                                 }
@@ -181,12 +182,12 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                     phone2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            new AlertDialog(mActivity).builder().setTitle(details.getContact().get(j).getPhone2())
+                            new AlertDialog(mContext).builder().setTitle(details.getContact().get(j).getPhone2())
                                     .setPositiveButton("call", new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
-                                            if (ActivityCompat.checkSelfPermission(mActivity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                                                if (ActivityCompat.shouldShowRequestPermissionRationale(mActivity,
+                                            if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                                if (ActivityCompat.shouldShowRequestPermissionRationale(mContext,
                                                         Manifest.permission.CALL_PHONE)) {
                                                     // 返回值：
                                                     //                          如果app之前请求过该权限,被用户拒绝, 这个方法就会返回true.
@@ -197,12 +198,12 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
 
                                                     // 帮跳转到该应用的设置界面，让用户手动授权
                                                     Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                                                    Uri uri = Uri.fromParts("package", mActivity.getPackageName(), null);
+                                                    Uri uri = Uri.fromParts("package", mContext.getPackageName(), null);
                                                     intent.setData(uri);
-                                                    mActivity.startActivity(intent);
+                                                    mContext.startActivity(intent);
                                                 }else{
                                                     // 不需要解释为何需要该权限，直接请求授权
-                                                    ActivityCompat.requestPermissions(mActivity,
+                                                    ActivityCompat.requestPermissions(mContext,
                                                             new String[]{Manifest.permission.CALL_PHONE},
                                                             MY_PERMISSIONS_REQUEST_CALL_PHONE);
                                                 }
@@ -221,7 +222,7 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                     viewHolder.contact.addView(inflate);
                 }
                 for (int i = 0; i < details.getCrew().size(); i++) {
-                    View inflate1 = View.inflate(mActivity, R.layout.fragment_item0, null);
+                    View inflate1 = View.inflate(mContext, R.layout.fragment_item0, null);
                     TextView key = (TextView) inflate1.findViewById(R.id.item0_key);
                     TextView value = (TextView) inflate1.findViewById(R.id.item0_value);
                     key.setText(details.getCrew().get(i).getName() == null ? "" : details.getCrew().get(i).getName());
@@ -229,7 +230,7 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                     viewHolder.ll1.addView(inflate1);
                 }
 
-                View inflate = View.inflate(mActivity, R.layout.fragment_item0, null);
+                View inflate = View.inflate(mContext, R.layout.fragment_item0, null);
                 TextView key = (TextView) inflate.findViewById(R.id.item0_key);
                 TextView value1 = (TextView) inflate.findViewById(R.id.item0_value);
                 key.setText(details.getCrewVehicle().getVehicleName() == null ? "" : details.getCrewVehicle().getVehicleName());
@@ -241,17 +242,17 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                 viewHolder.phone1.setText(mGetJobSheetRespBean.getClientDetails().getPhone1());
                 viewHolder.phone2.setText(mGetJobSheetRespBean.getClientDetails().getPhone2());
 
-                viewHolder.phone1.setTextColor(mActivity.getResources().getColor(R.color.phone_color));
-                viewHolder.phone2.setTextColor(mActivity.getResources().getColor(R.color.phone_color));
+                viewHolder.phone1.setTextColor(mContext.getResources().getColor(R.color.phone_color));
+                viewHolder.phone2.setTextColor(mContext.getResources().getColor(R.color.phone_color));
                 viewHolder.phone1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        new AlertDialog(mActivity).builder().setTitle(mGetJobSheetRespBean.getClientDetails().getPhone1())
+                        new AlertDialog(mContext).builder().setTitle(mGetJobSheetRespBean.getClientDetails().getPhone1())
                                 .setPositiveButton("call", new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        if (ActivityCompat.checkSelfPermission(mActivity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                                            if (ActivityCompat.shouldShowRequestPermissionRationale(mActivity,
+                                        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                            if (ActivityCompat.shouldShowRequestPermissionRationale(mContext,
                                                     Manifest.permission.CALL_PHONE)) {
                                                 // 返回值：
                                                 //                          如果app之前请求过该权限,被用户拒绝, 这个方法就会返回true.
@@ -262,12 +263,12 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
 
                                                 // 帮跳转到该应用的设置界面，让用户手动授权
                                                 Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                                                Uri uri = Uri.fromParts("package", mActivity.getPackageName(), null);
+                                                Uri uri = Uri.fromParts("package", mContext.getPackageName(), null);
                                                 intent.setData(uri);
-                                                mActivity.startActivity(intent);
+                                                mContext.startActivity(intent);
                                             }else{
                                                 // 不需要解释为何需要该权限，直接请求授权
-                                                ActivityCompat.requestPermissions(mActivity,
+                                                ActivityCompat.requestPermissions(mContext,
                                                         new String[]{Manifest.permission.CALL_PHONE},
                                                         MY_PERMISSIONS_REQUEST_CALL_PHONE);
                                             }
@@ -287,12 +288,12 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                 viewHolder.phone2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        new AlertDialog(mActivity).builder().setTitle(mGetJobSheetRespBean.getClientDetails().getPhone2())
+                        new AlertDialog(mContext).builder().setTitle(mGetJobSheetRespBean.getClientDetails().getPhone2())
                                 .setPositiveButton("call", new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        if (ActivityCompat.checkSelfPermission(mActivity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                                            if (ActivityCompat.shouldShowRequestPermissionRationale(mActivity,
+                                        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                            if (ActivityCompat.shouldShowRequestPermissionRationale(mContext,
                                                     Manifest.permission.CALL_PHONE)) {
                                                 // 返回值：
                                                 //                          如果app之前请求过该权限,被用户拒绝, 这个方法就会返回true.
@@ -303,12 +304,12 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
 
                                                 // 帮跳转到该应用的设置界面，让用户手动授权
                                                 Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                                                Uri uri = Uri.fromParts("package", mActivity.getPackageName(), null);
+                                                Uri uri = Uri.fromParts("package", mContext.getPackageName(), null);
                                                 intent.setData(uri);
-                                                mActivity.startActivity(intent);
+                                                mContext.startActivity(intent);
                                             }else{
                                                 // 不需要解释为何需要该权限，直接请求授权
-                                                ActivityCompat.requestPermissions(mActivity,
+                                                ActivityCompat.requestPermissions(mContext,
                                                         new String[]{Manifest.permission.CALL_PHONE},
                                                         MY_PERMISSIONS_REQUEST_CALL_PHONE);
                                             }
@@ -330,7 +331,7 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                 if (null == mGetJobSheetRespBean.getAddressDetails() || mGetJobSheetRespBean.getAddressDetails().size() == 0) {
                 } else {
                     for (int i = 0; i < mGetJobSheetRespBean.getAddressDetails().size(); i++) {
-                        LinearLayout ll = (LinearLayout) LayoutInflater.from(mActivity).inflate(R.layout.address_inner_items, null);
+                        LinearLayout ll = (LinearLayout) LayoutInflater.from(mContext).inflate(R.layout.address_inner_items, null);
                         LinearLayout llAddress = (LinearLayout) ll.findViewById(R.id.ll_address);
                         LinearLayout llNotes = (LinearLayout) ll.findViewById(R.id.ll_address_notes);
                         String title = "Address " + (i + 1) + ":" + (1 == mGetJobSheetRespBean.getAddressDetails().get(i).getAddressType() ? "PICK-UP" : "DROP-OFF");
@@ -356,7 +357,7 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                         access.setText(mGetJobSheetRespBean.getAddressDetails().get(i).getAccess()==null ? "" : mGetJobSheetRespBean.getAddressDetails().get(i).getAccess());
 
                         for (int j = 0; j <mGetJobSheetRespBean.getAddressDetails().get(i).getJobAddressNotes().size(); j++) {
-                            LinearLayout ll1 = (LinearLayout) LayoutInflater.from(mActivity).inflate(R.layout.address_notes, null);
+                            LinearLayout ll1 = (LinearLayout) LayoutInflater.from(mContext).inflate(R.layout.address_notes, null);
                             TextView tvNotes = (TextView) ll1.findViewById(R.id.tv_notes_key);
                             TextView tvNotesValue = (TextView) ll1.findViewById(R.id.tv_notes_value);
                             tvNotes.setText("Notes "+(j+1));
@@ -512,7 +513,7 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                         || mGetJobSheetRespBean.getAttachedItems().size() == 0) {
                 } else {
                     for (int i = 0; i < mGetJobSheetRespBean.getAttachedItems().size(); i++) {
-                        LinearLayout ll = (LinearLayout) LayoutInflater.from(mActivity).inflate(R.layout.item_roster_attachitems, null);
+                        LinearLayout ll = (LinearLayout) LayoutInflater.from(mContext).inflate(R.layout.item_roster_attachitems, null);
                         TextView tv = (TextView) ll.findViewById(R.id.attachitems_name);
 
                         if (mGetJobSheetRespBean.getAttachedItems().get(i).getFileType() == 1) {
@@ -528,7 +529,7 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                             @Override
                             public void onClick(View v) {
                                 EventBus.getDefault().postSticky(item);//post给MainActivity的onEventLogin方法
-                                mActivity.startActivity(new Intent(mActivity, BrowseFileActivity.class));
+                                mContext.startActivity(new Intent(mContext, BrowseFileActivity.class));
                             }
                         });
                         viewHolder.items_container.addView(ll);
@@ -545,10 +546,10 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                 } else {
                     double total = 0;
                     for (int i = 0; i < mGetJobSheetRespBean.getTotalInventory().size(); i++) {
-                        LinearLayout ll = (LinearLayout) LayoutInflater.from(mActivity).inflate(R.layout.item_roster_inventorys, null);
+                        LinearLayout ll = (LinearLayout) LayoutInflater.from(mContext).inflate(R.layout.item_roster_inventorys, null);
                         TextView tv = (TextView) ll.findViewById(R.id.inventory_name);
                         tv.setText(mGetJobSheetRespBean.getTotalInventory().get(i).getInventoryName() + "(" + mGetJobSheetRespBean.getTotalInventory().get(i).getQuantity() + ")");
-                        tv.setTextAppearance(mActivity, R.style.JobTagTextStyle);
+                        tv.setTextAppearance(mContext, R.style.JobTagTextStyle);
                         TextView tv1 = (TextView) ll.findViewById(R.id.inventory_no);
                         tv1.setText((mGetJobSheetRespBean.getTotalInventory().get(i).getVolume() == 0) ? "" : mGetJobSheetRespBean.getTotalInventory().get(i).getVolume() + "CuM");
 //                        tv1.setText(mGetJobSheetRespBean.getTotalInventory().get(i).getVolume() + "CuM");
@@ -619,7 +620,7 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
                 }
                 viewHolder.llPayment.removeAllViews();
                 for (int i = 0; i <mGetJobSheetRespBean.getPayment().size() ; i++) {
-                    LinearLayout ll = (LinearLayout) LayoutInflater.from(mActivity).inflate(R.layout.layout_payment, null);
+                    LinearLayout ll = (LinearLayout) LayoutInflater.from(mContext).inflate(R.layout.layout_payment, null);
                     TextView tvMoney = (TextView) ll.findViewById(R.id.tv_payment_money);
                     TextView tvCash = (TextView) ll.findViewById(R.id.tv_payment_cash);
                     TextView tvDate = (TextView) ll.findViewById(R.id.tv_payment_date);
@@ -726,7 +727,7 @@ public class JobSheetInfoScrollAdapter extends PagerAdapter {
         //uri:统一资源标示符（更广）
         intent.setData(Uri.parse("tel:" +phone));
         //开启系统拨号器
-        mActivity.startActivity(intent);
+        mContext.startActivity(intent);
     }
 
 

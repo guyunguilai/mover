@@ -1,5 +1,6 @@
 package cn.ssic.moverlogic.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,6 +15,7 @@ import butterknife.OnClick;
 import cn.ssic.moverlogic.App;
 import cn.ssic.moverlogic.BaseActivity;
 import cn.ssic.moverlogic.R;
+import cn.ssic.moverlogic.jobinspection.InspectionActivity;
 import cn.ssic.moverlogic.mvppresenter.IPresenter;
 import cn.ssic.moverlogic.netokhttp3.RetrofitHttp;
 import cn.ssic.moverlogic.netokhttp3.RxResultHelper;
@@ -74,14 +76,21 @@ public class DispatchActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.panel_left:
-                finish();
+                start--;
+                if(start == 3){
+                    tvDispatch.setText(R.string.job_dispatch_3);
+                }
+                else if(start == 2){
+                    tvDispatch.setText(R.string.job_dispatch_2);
+                }
+                else if(start == 1){
+                    tvDispatch.setText(R.string.job_dispatch_1);
+                }else{
+                    finish();
+                }
                 break;
             case R.id.panel_mid:
-                if(start <=3 ){
-                    dispatchJob(start);
-                }else{
-
-                }
+                dispatchJob(start);
                 break;
             case R.id.panel_right:
                 break;
@@ -97,19 +106,21 @@ public class DispatchActivity extends BaseActivity {
                 .subscribe(respBean -> {
 //                    Toast.makeText(mActivity, "dispatchJob success", Toast.LENGTH_SHORT).show();
                     if (respBean.getSkipMark() == 555) {
+                        start++;
                         switch (start){
-                            case 1:
+                            case 2:
                                 tvDispatch.setText(R.string.job_dispatch_2);
                                 break;
-                            case 2:
+                            case 3:
                                 tvDispatch.setText(R.string.job_dispatch_3);
                                 break;
-                            case 3:
-                                baseTitle.setText(getString(R.string.job_inspection));
-                                tvDispatch.setText(R.string.job_inspection_1);
+                            case 4:
+                                Intent intent = new Intent(App.app, InspectionActivity.class);
+                                startActivity(intent);
+                                finish();
                                 break;
                         }
-                        start++;
+
                     }
                 }, throwable -> {
 //                    Toast.makeText(mActivity, "dispatchJob fail", Toast.LENGTH_SHORT).show();

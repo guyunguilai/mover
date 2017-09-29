@@ -65,7 +65,7 @@
     <string name="job_dispatch_2">Leaving Depot Now</string>
     <string name="job_dispatch_3">Arrived to Job Location Now</string>
     <string name="job_inspection">Job Inspection</string>
-    <string name="job_inspection_1">Pre-Job Inspection</string>
+    <string name="job_inspection_1">Pre-Job \n Inspection</string>
     <string name="job_prejob">Pre-Job</string>
     <string name="job_prejob_1">Estimate Job Completion Time</string>
     <string name="job_prejob_2">Customer Accept and Sign</string>

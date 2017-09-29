@@ -187,7 +187,7 @@ public class JobFragment extends Fragment implements JobListAdapter.OnItemClickL
     GestureOverlayView gestureOverlayView;
 
     ViewPager mViewPager;
-    JobSheetInfoScrollAdapter jobSheetInfoScrollAdapter;
+    JobSheetInfoScrollAdapter jobSheetInfoScrollAdapter=null;
     JobListAdapter jobListAdapter;
     RecyclerView jobListRecyclerView;
 
@@ -561,7 +561,7 @@ public class JobFragment extends Fragment implements JobListAdapter.OnItemClickL
             views.get(0).setBackgroundResource(R.drawable.round_red_point);
         }
 
-        jobSheetInfoScrollAdapter = new JobSheetInfoScrollAdapter(mActivity, mJob, this);
+//        jobSheetInfoScrollAdapter = new JobSheetInfoScrollAdapter(mActivity, mJob.getJobId());
         mViewPager.setAdapter(jobSheetInfoScrollAdapter);
         mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

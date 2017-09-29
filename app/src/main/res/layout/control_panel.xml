@@ -26,6 +26,7 @@
         android:src="@drawable/next" />
 
     <ImageView
+        android:visibility="invisible"
         android:layout_gravity="center_vertical"
         android:scaleType="centerInside"
         android:id="@+id/panel_right"

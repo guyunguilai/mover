@@ -37,11 +37,13 @@ import cn.ssic.moverlogic.adapter.RosterInfoScrollAdapter;
 import cn.ssic.moverlogic.adapter.RosterRecyclerAdapter;
 import cn.ssic.moverlogic.bean.ActiveJobRespBean;
 import cn.ssic.moverlogic.customviews.GravitySnapHelper;
+import cn.ssic.moverlogic.jobinspection.ParamKey;
 import cn.ssic.moverlogic.net2request.Job;
 import cn.ssic.moverlogic.netokhttp3.RetrofitHttp;
 import cn.ssic.moverlogic.netokhttp3.RxResultHelper;
 import cn.ssic.moverlogic.utils.DialogUtil;
 import cn.ssic.moverlogic.utils.FileUtils;
+import cn.ssic.moverlogic.utils.SharedprefUtil;
 import rx.Subscription;
 
 import static cn.ssic.moverlogic.R.id.point;
@@ -286,30 +288,11 @@ public class RosterFragment extends Fragment implements RosterRecyclerAdapter.On
                     if ("222".equals(acceptJob.getStatus())) {
                         Toast.makeText(mActivity, acceptJob.getMsg(), Toast.LENGTH_SHORT).show();
                     }
-
-                    if("555".equals(acceptJob.getStatus())){
-                        switch (acceptJob.getCurrentPage()){
-                            case 1:
-                                Intent intent = new Intent(mActivity, DispatchActivity.class);
-                                intent.putExtra("jobId",acceptJob.getJobId());
-                                intent.putExtra("start",1);
-                                startActivity(intent);
-
-                                break;
-                            case 2:
-                                break;
-                            case 3:
-                                break;
-                            case 4:
-                                break;
-                            default:
-                                break;
-                        }
-
-                    }
-
-
-//                    EventBus.getDefault().post(acceptJob);
+                    SharedprefUtil.getInstance(mActivity).saveInt(ParamKey.SP_JOB_ID,jobId);
+                    Intent intent = new Intent(mActivity, DispatchActivity.class);
+                    intent.putExtra("jobId",acceptJob.getJobId());
+                    intent.putExtra("start",1);
+                    startActivity(intent);
                 }, throwable -> {
                     Toast.makeText(mActivity, throwable.getMessage(), Toast.LENGTH_SHORT).show();
                     Logger.e(throwable.getMessage());

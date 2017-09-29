@@ -56,6 +56,11 @@
         <activity android:name=".mvpview.EditUserInfoActivity" />
         <activity android:name="me.nereo.multi_image_selector.MultiImageSelectorActivity" />
         <activity android:name=".activities.DispatchActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".jobinspection.EstimateActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".jobinspection.InspectionActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".jobinspection.CustomerAcceptActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activities.JobSheet" android:screenOrientation="portrait"/>
+        <activity android:name=".jobinspection.FirstSignActivity" android:screenOrientation="landscape"/>
         <activity
             android:name=".mvpview.LoginActivity"
             android:screenOrientation="portrait" />

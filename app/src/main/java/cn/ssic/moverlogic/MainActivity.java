@@ -168,52 +168,52 @@ public class MainActivity extends BaseActivity implements IUserInfoView {
         mJobFragment.mJob = new Job();
         mJobFragment.mJob.setJobId(event.getJobId());
 
-        if("555".equals(event.getStatus())){
-            switch (event.getCurrentPage()){
-                case 1:
-                    mJobFragment.fragmentStatus = mJobFragment.JOB_DISPATCH_1;
-                    break;
-                case 2:
-                    mJobFragment.fragmentStatus = mJobFragment.JOB_INSPECTION;
-                    break;
-                case 3:
-                    String time = event.getRunDate();
-
-                    if (null != time){
-                        String temp = time.substring(0,time.indexOf(":"));
-//                            if (temp.indexOf("0") == 0){
-//                                temp = temp.substring(1,2);
-//                            }
-                        int hour = Integer.parseInt(temp);
-                        temp = time.substring(time.indexOf(":") + 1,time.lastIndexOf(":"));
-//                            if (temp.indexOf("0") == 0){
-//                                temp = temp.substring(1,2);
-//                            }
-                        int minute = Integer.parseInt(temp);
-                        temp = time.substring(time.lastIndexOf(":") + 1);
-//                            if (temp.indexOf("0") == 0){
-//                                temp = temp.substring(1,2);
-//                            }
-                        int second = Integer.parseInt(temp);
-                        mJobFragment.timeCount = hour * 3600 + minute * 60 + second;
-                    }
-
-                    if(event.getRunStatus() == 0){
-                        mJobFragment.fragmentStatus = mJobFragment.JOB_IN_PLAY;
-                        if (!mJobFragment.handler.hasMessages(JobFragment.START_TIMER)){
-                            mJobFragment.handler.sendEmptyMessage(JobFragment.START_TIMER);
-                        }
-                    }else{
-                        mJobFragment.fragmentStatus = mJobFragment.JOB_PAUSE_TIME;
-                    }
-                    break;
-                case 4:
-                    mJobFragment.fragmentStatus = mJobFragment.JOB_FINISH_COLLECT;
-                    break;
-            }
-
-        }
         showFragment(mJobFragment);
+
+
+        switch (event.getCurrentPage()){
+            case 1:
+                mJobFragment.fragmentStatus = mJobFragment.JOB_DISPATCH_1;
+                break;
+            case 2:
+                mJobFragment.fragmentStatus = mJobFragment.JOB_INSPECTION;
+                break;
+            case 3:
+                String time = event.getRunDate();
+
+                if (null != time){
+                    String temp = time.substring(0,time.indexOf(":"));
+//                            if (temp.indexOf("0") == 0){
+//                                temp = temp.substring(1,2);
+//                            }
+                    int hour = Integer.parseInt(temp);
+                    temp = time.substring(time.indexOf(":") + 1,time.lastIndexOf(":"));
+//                            if (temp.indexOf("0") == 0){
+//                                temp = temp.substring(1,2);
+//                            }
+                    int minute = Integer.parseInt(temp);
+                    temp = time.substring(time.lastIndexOf(":") + 1);
+//                            if (temp.indexOf("0") == 0){
+//                                temp = temp.substring(1,2);
+//                            }
+                    int second = Integer.parseInt(temp);
+                    mJobFragment.timeCount = hour * 3600 + minute * 60 + second;
+                }
+
+                if(event.getRunStatus() == 0){
+                    mJobFragment.fragmentStatus = mJobFragment.JOB_IN_PLAY;
+                    if (!mJobFragment.handler.hasMessages(JobFragment.START_TIMER)){
+                        mJobFragment.handler.sendEmptyMessage(JobFragment.START_TIMER);
+                    }
+                }else{
+                    mJobFragment.fragmentStatus = mJobFragment.JOB_PAUSE_TIME;
+                }
+                break;
+            case 4:
+                mJobFragment.fragmentStatus = mJobFragment.JOB_FINISH_COLLECT;
+                break;
+        }
+
 
 //        mJobFragment.loadView();
     }

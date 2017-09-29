@@ -7,6 +7,8 @@ import android.text.TextUtils;
 
 import com.orhanobut.logger.Logger;
 
+import org.greenrobot.eventbus.EventBus;
+
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import cn.ssic.moverlogic.App;
 import cn.ssic.moverlogic.Constants;
@@ -37,6 +39,7 @@ public class RxResultHelper {
                     //表示成功
                     return createData(tApiResponse.getResp());
                 }else if ("555".equals(tApiResponse.getStatus())){
+                    EventBus.getDefault().post(tApiResponse.getResp());
                     return createData(tApiResponse.getResp());
                 }else if(TextUtils.equals("401", tApiResponse.getStatus()) || TextUtils.equals("403", tApiResponse.getStatus())){
                     return Observable.error(new Exception(tApiResponse.getMsg()));
