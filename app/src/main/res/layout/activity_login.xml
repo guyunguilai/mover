@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg"
+    tools:context="cn.ssic.moverlogic.MainActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/username"
+        android:hint="UserName"
+        android:maxLines="1"
+        android:textSize="16sp"
+        android:textColorHint="@color/white"
+        android:drawableStart="@drawable/username_hint"
+        android:textColor="@color/white"
+        android:drawablePadding="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="200dp" />
+    <!--android:drawableEnd="@android:drawable/ic_menu_close_clear_cancel"-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/userpwd"
+        android:hint="UserPwd"
+        android:maxLines="1"
+        android:textColorHint="@color/white"
+        android:textColor="@color/color333333"
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        android:layout_below="@+id/username"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/password_hint"
+        android:drawablePadding="15dp"
+        />
+    <!--android:drawableEnd="@android:drawable/ic_menu_close_clear_cancel"-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login"
+        android:id="@+id/login"
+        android:layout_below="@+id/userpwd"
+        android:layout_marginTop="80dp"
+         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/register"
+        android:visibility="gone"
+        android:layout_below="@+id/userpwd"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logo"
+        android:src="@drawable/icon"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/remember_username_cb"
+        android:textColor="@color/white"
+        style="@style/CheckBox"
+        android:text="@string/remember_username"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+    <RadioGroup
+        android:visibility="gone" android:id="@+id/radioGroup" android:contentDescription="性别" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        14     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/radio190" android:text="190" android:checked="true"></RadioButton>
+        15     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/radio89" android:text="190:81"></RadioButton>
+        15     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/radiocom" android:text="fleet365"></RadioButton>
+        16  </RadioGroup>
+</RelativeLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="main_chat">CHAT</string>
+    <string name="main_active">ACTIVE JOB</string>
+    <string name="main_alert">ALERTS</string>
+    <string name="main_roster">ROSTER</string>
+    <string name="main_job">JOB</string>
+
+    <string name="app_name">Removals</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">colsed</string>
+    <string name="time_date">TIME &amp; DATE</string>
+    <string name="date">Date:</string>
+    <string name="start_time">Start Time:</string>
+    <string name="job_type">JOB TYPE</string>
+    <string name="type">Type:</string>
+    <string name="move_size">Move Size:</string>
+    <string name="est_time">Est. Time:</string>
+    <string name="estimated_time">ESTIMATED TIME</string>
+    <string name="vehicle_details">VEHICLE DETAILS</string>
+    <string name="truck_type">Truck Type:</string>
+    <string name="capacity">Capacity:</string>
+    <string name="gvm">Gvm:</string>
+    <string name="men">Men:</string>
+    <string name="tm">Tm:</string>
+    <string name="extra_equipment">EXTRA EQUIPMENT</string>
+    <string name="tailgate">Tailgate:</string>
+    <string name="piano_dolley">Piano Dolley:</string>
+    <string name="address1">ADDRESS 1</string>
+    <string name="address2">ADDRESS 2</string>
+    <string name="basepay">BASE PAY</string>
+    <string name="time_calculation">TIME CALCULATION</string>
+    <string name="extra_payment">EXTRA CHARGES</string>
+    <string name="pay_type">Pay Type:</string>
+    <string name="pay_amount">Pay Amount:</string>
+    <string name="call_out_free">Call Out Fee:</string>
+    <string name="return_fee">Return Fee:</string>
+    <string name="upright_piano">Upright Piano:</string>
+    <string name="road_toll">Road Tolls:</string>
+    <string name="minimum_time">Minimum Time:</string>
+    <string name="time_increments">Time Increments:</string>
+    <string name="term_address"><u>Address Details</u></string>
+    <string name="term_contract"><u>Terms of Contract</u></string>
+    <string name="remember_username">Remember Username</string>
+
+    <!--contact-->
+    <string name="roster_contact"><u>Contact Details</u></string>
+    <string name="roster_payment"><u>Payment</u></string>
+    <string name="roster_team">Team</string>
+    <string name="roster_car">Car</string>
+    <string name="contact_name">Name</string>
+    <string name="contact_email1">Email 1:</string>
+    <string name="contact_email2">Email 2:</string>
+    <string name="contact_mobile">Mobile:</string>
+    <string name="contact_land_line">Landline:</string>
+
+
+
+    <string name="file_name">File Name</string>
+
+    <string name="job">Job</string>
+    <string name="job_dispatch">Dispatch</string>
+    <string name="job_dispatch_1">Vehicle Inspection Complete?</string>
+    <string name="job_dispatch_2">Leaving Depot Now</string>
+    <string name="job_dispatch_3">Arrived to Job Location Now</string>
+    <string name="job_inspection">Job Inspection</string>
+    <string name="job_inspection_1">Pre-Job Inspection</string>
+    <string name="job_prejob">Pre-Job</string>
+    <string name="job_prejob_1">Estimate Job Completion Time</string>
+    <string name="job_prejob_2">Customer Accept and Sign</string>
+    <string name="job_prejob_term">with the \'Terms of Service\' contract</string>
+    <string name="job_prejob_charge">with the Charges associated with this job</string>
+
+    <string name="job_in_play">Job in Play</string>
+    <string name="job_pause">Paused</string>
+    <string name="job_pause_time">Pause Time</string>
+
+    <string name="job_finish_collect">Amount to Collect</string>
+    <string name="job_payment">Payment</string>
+    <string name="job_finish_payment_card">Charge Credit Card</string>
+    <string name="job_finish_payment">Add Payment</string>
+    <string name="job_finish_tips">Please note that credit card payments inncur a 5% processing fee.</string>
+    <string name="job_finish_invoice">Invoice Required</string>
+    <string name="job_finish_complete">Job Complete,\nThank You!</string>
+
+    <string name="job_sheet_client_details"><u>Client Details</u></string>
+    <string name="job_sheet_client1">Client1</string>
+    <string name="job_sheet_name">Name</string>
+    <string name="job_sheet_phone1">Phone 1</string>
+    <string name="job_sheet_phone2">Phone 2</string>
+    <string name="job_sheet_address_detail">Address Details</string>
+    <string name="job_sheet_address1">Address 1:PICK-UP</string>
+    <string name="job_sheet_apart1">Apartment 24\n1-3 Riverside Drive\nPort Melbourne VIC\n3002,Australia</string>
+    <string name="job_sheet_address2">Address 2:DROP-OFF</string>
+    <string name="job_sheet_apart2">3 Anderson Street Frankston VIC\n3199,Australia</string>
+    <string name="job_sheet_vehicle1"><u>Vehicle 1</u></string>
+    <string name="job_sheet_vehicle_detail">Vehicle Details</string>
+    <string name="job_sheet_vehicle_truck_type">Truck Type:</string>
+    <string name="job_sheet_vehicle_truck_capacity">Truck Capacity:</string>
+    <string name="job_sheet_vehicle_truck_gvm">Truck Gvm:</string>
+    <string name="job_sheet_vehicle_truck_tm">Truck Tm:</string>
+    <string name="job_sheet_vehicle_truck_men">Men:</string>
+    <string name="job_sheet_vehicle_equipment">EQUIPMENT</string>
+    <string name="job_sheet_job_details"><u>Job Details</u></string>
+    <string name="job_sheet_job_time">TIME &amp; DATE</string>
+    <string name="job_sheet_job_date">Date</string>
+    <string name="job_sheet_job_start_time">Start Time</string>
+    <string name="job_sheet_job_type_title">Job Type</string>
+    <string name="job_sheet_job_type">Type:</string>
+    <string name="job_sheet_job_move_size">Move Size:</string>
+    <string name="job_sheet_job_est1">Est.Time:</string>
+    <string name="job_sheet_job_est3">Est.Time(1):</string>
+    <string name="job_sheet_job_est2">Est.Time(2):</string>
+    <string name="job_sheet_job_charge"><u>Job Charges</u></string>
+    <string name="job_sheet_restore_charge"><u>Client Charges</u></string>
+    <string name="job_sheet_job_vehicle_charge">Vehicle Charges</string>
+    <string name="job_sheet_job_rate_type">Rate Type</string>
+    <string name="job_sheet_job_rate">Rate</string>
+    <string name="job_sheet_job_call_out_fee">Call Out Fee:</string>
+    <string name="job_sheet_job_return_fee">Return Fee:</string>
+    <string name="job_sheet_job_extra_charge">Extra Charges</string>
+    <string name="job_sheet_job_upright_piano">Upright Piano</string>
+    <string name="job_sheet_job_road_toll">Road Tolls</string>
+    <string name="job_sheet_job_time_charge">Time Charges</string>
+    <string name="job_sheet_job_min_time">Minimum Time:</string>
+    <string name="job_sheet_job_time_increments">Time Increments:</string>
+    <string name="job_sheet_job_discount">Discounts</string>
+    <string name="job_sheet_job_promotion">Promotion:</string>
+    <string name="job_sheet_job_fee">TRANSACTION FEE</string>
+    <string name="job_sheet_job_gst">GST:</string>
+    <string name="job_sheet_job_attached_items"><u>Attached Items</u></string>
+    <string name="job_sheet_job_total_inventory"><u>Total Inventory</u></string>
+    <string name="job_sheet_job_time_sheet"><u>Time Sheet</u></string>
+    <string name="job_sheet_job_start_times">Start Times</string>
+    <string name="job_sheet_job_dispatch_time">Dispatch Time</string>
+    <string name="job_sheet_job_arrival_time">Arrival Time</string>
+    <string name="job_sheet_job_pause_time">Paused Time(s)</string>
+    <string name="job_sheet_job_break_time">Break:</string>
+    <string name="job_sheet_job_finish_time_title">FINISH TIME</string>
+    <string name="job_sheet_job_finish_time">Finish Time:</string>
+    <string name="job_sheet_job_total_time">TOTAL CHARGE TIME</string>
+    <string name="job_sheet_job_total">Total:</string>
+    <string name="job_sheet_job_running_total"><u>Running Total</u></string>
+    <string name="job_sheet_job_total_vehicle_charge">Total Vehicle Charges:</string>
+    <string name="job_sheet_job_total_extra_charge">Total Extra Charges:</string>
+    <string name="job_sheet_job_total_discount">Total Discount:</string>
+    <string name="job_sheet_job_sub_total">Sub Total:</string>
+    <string name="job_sheet_job_sub_tax">Tax:</string>
+    <string name="job_sheet_job_notes"><u>Job Notes</u></string>
+    <string name="job_sheet_notes"><u>Notes</u></string>
+    <string name="job_sheet_job_general_notes">General Notes</string>
+    <string name="job_sheet_job_foreman_notes">Forman Notes</string>
+    <string name="job_sheet_job_terms"><u>Terms of Service</u></string>
+    <string name="poster_detail">TODAY</string>
+    <string name="alerts_detail">JOB FILE</string>
+    <string name="position3_fragment">ALERTS</string>
+    <string name="position4_fragment">ROSTER</string>
+    <string name="position2_fragment">JOB</string>
+
+
+    <string name="password_is_empty">Password is empty</string>
+    <string name="term_content">This is a contract between you, the service provider, and ABC Removals PTY LTD. You agree to their Terms &amp; Condition hereon in, +"\n"+
+                        1.Term 1 is That you take responsibility for every mistake you make and do not put liability on to ABC Removals PTY LTD. +"\n\n"+
+                        2.Term 2 is that we assume your company details are current and that you will immediately inform us of any changes. +"\n\n"+
+                        3.You have paid and have a current certificate of Currency for both Public Liability and Transit Insurance. +"\n\n"+
+                        4.All your vehicle meet saftey regulations, road worthy standards and have both active registration and insurance.+"\n\n"+
+                        5.All your vehicles are kept in a safe and clean manner at all times, loaded with all the necessary equipment to conduct the services of this job.</string>
+    <string name="alert_listTitle1">NEW JOBS</string>
+    <string name="alert_listTitle2">JOB CHANGES</string>
+    <string name="alert_listTitle3">CANCELLATIONS</string>
+    <string name="alert_listTitle4">TODAY</string>
+
+
+    <string name="job_address_property">Property:</string>
+    <string name="job_address_Levels">Levels:</string>
+    <string name="job_address_Floor">Floor:</string>
+    <string name="job_address_Access">Access:</string>
+    <string name="job_address_notes">Notes 1</string>
+
+    <!--payment-->
+    <string name="job_payment_money">1. $100</string>
+    <string name="job_payment_cash">cash</string>
+    <string name="job_payment_date">08/04/2017</string>
+
+    <!--multi language-->
+    <string name="multi_EN">English</string>
+    <string name="multi_CN">Chinese</string>
+
+    <!--personal-->
+    <string name="personal_user_name">User name</string>
+    <string name="personal_user_info">User information</string>
+    <string name="personal_first_name">Fisrt Name:</string>
+    <string name="personal_last_name">Last Name:</string>
+    <string name="personal_email">E-mail:</string>
+    <string name="personal_mobile_num">Mobile No.:</string>
+    <string name="personal_login_out">Logout</string>
+    <string name="personal_set_language">Set Language</string>
+    <string name="personal_set_language_save">save</string>
+</resources>

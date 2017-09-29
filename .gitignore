@@ -1,0 +1,7 @@
+.idea
+build
+.gradle
+AndroidMoveLogic.iml
+app/app.iml
+local.properties
+iml

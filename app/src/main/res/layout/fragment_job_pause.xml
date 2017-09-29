@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/break_reason_sp"
+            android:gravity="center"
+            android:text="Reason for Pause"
+            android:textColor="@color/color333333"
+            android:textSize="34sp" />
+
+
+        <TextView
+            android:id="@+id/break_reason_sp"
+            style="@style/TextSpinnerStyle"
+            android:layout_centerInParent="true"
+            android:text="Taking Break"/>
+
+        <!--<cn.ssic.moverlogic.customviews.spinner.NiceSpinner-->
+            <!--android:id="@+id/break_reason_sp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_margin="10dp" />-->
+
+    </RelativeLayout>
+</LinearLayout>

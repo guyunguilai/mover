@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/money"
+            android:gravity="center"
+            android:text="@string/job_finish_payment"
+            android:textColor="@color/color333333"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/finish_cash_sp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="$888.88"
+            android:textColor="@color/color333333"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/finish_cash_sp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:textColor="@color/color333333"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/cash_no_et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/finish_cash_sp"
+            android:layout_margin="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cash_no_et"
+            android:gravity="left"
+            android:text="@string/job_finish_tips"
+            android:textColor="@color/color333333"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</LinearLayout>

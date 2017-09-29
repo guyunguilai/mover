@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <TextView
+        android:textColor="@color/color333333"
+        android:id="@+id/tv_notes_key"
+        style="@style/address_notes"
+        android:text="@string/job_address_notes" />
+
+    <TextView
+        android:textColor="@color/color999999"
+        android:id="@+id/tv_notes_value"
+        style="@style/address_notes"
+        android:text="" />
+
+</LinearLayout>

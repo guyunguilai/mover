@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_refreshview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<com.andview.refreshview.XScrollView-->
+        <!--android:id="@+id/xscrollview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/JobTitleTextUnderlineStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/job_sheet_vehicle1" />
+
+            <TextView
+                style="@style/JobTitleTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/job_sheet_vehicle_detail" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/JobTagTextStyle"
+                    android:text="@string/job_sheet_vehicle_truck_type" />
+
+                <TextView
+                    android:id="@+id/truck_type"
+                    style="@style/JobInfoTextStyle"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/JobTagTextStyle"
+                    android:text="@string/job_sheet_vehicle_truck_capacity" />
+
+                <TextView
+                    android:id="@+id/truck_capacity"
+                    style="@style/JobInfoTextStyle"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/JobTagTextStyle"
+                    android:text="@string/job_sheet_vehicle_truck_gvm" />
+
+                <TextView
+                    android:id="@+id/truck_gvm"
+                    style="@style/JobInfoTextStyle"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/JobTagTextStyle"
+                    android:text="@string/job_sheet_vehicle_truck_tm" />
+
+                <TextView
+                    android:id="@+id/truck_tm"
+                    style="@style/JobInfoTextStyle"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/JobTagTextStyle"
+                    android:text="@string/job_sheet_vehicle_truck_men" />
+
+                <TextView
+                    android:id="@+id/truck_men"
+                    style="@style/JobInfoTextStyle"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_equipment"
+                    style="@style/JobTitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/job_sheet_vehicle_equipment" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/equipment_no"
+                        style="@style/JobTagTextStyle"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/equipment_value"
+                        style="@style/JobInfoTextStyle"
+                        android:text="@string/job_sheet_name" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    <!--</com.andview.refreshview.XScrollView>-->
+</ScrollView>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/address1_text_clickable"
+        style="@style/JobTitleTextWithImgStyle"
+        android:text="@string/job_sheet_address1" />
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll_address"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/address"
+            style="@style/JobAddressTextStyle"
+            android:text="Apartment 24\n1-3 Riverside Drive\nPort Melbourne VIC\n3002,Australia"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/JobTagTextStyle"
+                android:text="@string/job_address_property" />
+
+            <TextView
+                android:id="@+id/address_property"
+                style="@style/JobInfoTextStyle"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/JobTagTextStyle"
+                android:text="@string/job_address_Levels" />
+
+            <TextView
+                android:id="@+id/address_levels"
+                style="@style/JobInfoTextStyle"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/JobTagTextStyle"
+                android:text="@string/job_address_Floor" />
+
+            <TextView
+                android:id="@+id/address_floor"
+                style="@style/JobInfoTextStyle"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/JobTagTextStyle"
+                android:text="@string/job_address_Access" />
+
+            <TextView
+                android:id="@+id/address_access"
+                style="@style/JobInfoTextStyle"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_address_notes"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

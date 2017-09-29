@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_refreshview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <!--<com.andview.refreshview.XScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/JobTitleTextUnderlineStyle"
+                android:text="@string/term_contract" />
+
+            <com.daimajia.numberprogressbar.NumberProgressBar
+                android:visibility="gone"
+                android:id="@+id/web_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"/>
+            <com.andview.refreshview.XWebView
+                android:id="@+id/alerts_item4_webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </com.andview.refreshview.XWebView>
+
+        </LinearLayout>
+
+    <!--</com.andview.refreshview.XScrollView>-->
+
+
+</ScrollView>

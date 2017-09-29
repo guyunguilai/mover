@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/roster_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/job_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="TODAY"
+        android:textStyle="bold"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/color333333"
+        android:textSize="18sp"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_item_roster1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/job_date"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/color_today_itembackgroud">
+
+        <TextView
+            android:id="@+id/job_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:gravity="center"
+            android:text="8"
+            android:textColor="@color/color333333"
+            android:textSize="50sp"/>
+
+        <ImageView
+            android:id="@+id/check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/newmsg"/>
+
+        <LinearLayout
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/job_no"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/job_time"
+            android:layout_toRightOf="@+id/job_no"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/job_movesize"
+                    android:ellipsize="end"
+                    android:text="ADDRESS："
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:maxLines="1"
+                    android:id="@+id/job_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/job_movesize"
+                    android:ellipsize="end"
+                    android:textColor="@color/color333333"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/job_movesize"
+                    android:ellipsize="end"
+                    android:text="MOVE SIZE："
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:maxLines="1"
+                    android:id="@+id/job_movesize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="end"
+                    android:textColor="@color/color333333"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/job_movesize"
+                    android:ellipsize="end"
+                    android:text="EST.TIME："
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:maxLines="1"
+                    android:id="@+id/job_establishtime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/job_movesize"
+                    android:ellipsize="end"
+                    android:textColor="@color/color333333"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/job_time"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center|left"
+            android:text="Monday\n10/06/2016\n7:00am"
+            android:textColor="@color/color333333"
+            android:textSize="10sp"/>
+
+    </RelativeLayout>
+    <TextView
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="85dp"
+        android:layout_alignBottom="@id/rl_item_roster1"
+        android:id="@+id/job_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AWAITING"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="10sp"
+        android:textStyle="bold"/>
+</RelativeLayout>

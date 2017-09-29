@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              xmlns:xrefreshview="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/alerts_view"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e6e6e6"></View>
+
+    <TextView
+        android:id="@+id/no_data_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="No Job can be chosen"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:visibility="gone"/>
+
+    <com.andview.refreshview.XRefreshView
+        android:id="@+id/alert_refreshview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/alert_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false">
+
+        </android.support.v7.widget.RecyclerView>
+    </com.andview.refreshview.XRefreshView>
+</LinearLayout>

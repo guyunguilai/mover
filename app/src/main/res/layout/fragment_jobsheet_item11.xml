@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_refreshview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <TextView
+            style="@style/JobTitleTextUnderlineStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/job_sheet_job_terms"/>
+        <com.daimajia.numberprogressbar.NumberProgressBar
+            android:visibility="gone"
+            android:id="@+id/job_web_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"/>
+        <com.andview.refreshview.XWebView
+            android:id="@+id/job_webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.andview.refreshview.XWebView>
+
+</LinearLayout>

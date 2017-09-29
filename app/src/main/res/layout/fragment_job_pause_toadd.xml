@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/add_extra_name_sp"
+            android:gravity="center"
+            android:text="Add or Subtract Extra Charge"
+            android:textColor="@color/color333333"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/add_extra_name_sp"
+            style="@style/TextSpinnerStyle"
+            android:text="-----"
+            android:layout_centerInParent="true" />
+
+        <EditText
+            android:id="@+id/add_extra_cost_sp"
+            style="@style/TextSpinnerStyle"
+            android:inputType="number"
+            android:hint="$0.00"
+            android:text=""
+            android:textColorHint="@color/color999999"
+            android:layout_below="@id/add_extra_name_sp" />
+
+        <TextView
+            android:id="@+id/add_extra_quantity_sp"
+            style="@style/TextSpinnerStyle"
+            android:text="x1"
+            android:layout_below="@id/add_extra_cost_sp" />
+        <!--<cn.ssic.moverlogic.customviews.spinner.NiceSpinner-->
+            <!--android:id="@+id/add_extra_name_sp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_margin="10dp" />-->
+
+        <!--<cn.ssic.moverlogic.customviews.spinner.NiceSpinner-->
+            <!--android:id="@+id/add_extra_cost_sp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_below="@id/add_extra_name_sp"-->
+            <!--android:layout_margin="10dp" />-->
+
+        <!--<cn.ssic.moverlogic.customviews.spinner.NiceSpinner-->
+            <!--android:id="@+id/add_extra_quantity_sp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:layout_below="@id/add_extra_cost_sp"-->
+            <!--android:layout_margin="10dp" />-->
+
+    </RelativeLayout>
+</LinearLayout>

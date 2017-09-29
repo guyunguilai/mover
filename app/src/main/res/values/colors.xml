@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color666666">#666666</color>
+    <color name="color333333">#333333</color>
+    <color name="color999999">#999999</color>
+    <color name="colorededed">#ededed</color>
+    <color name="coloreba1ae">#eba1ae</color>
+
+    <color name="color_today_backgroud">#81eec7</color>
+    <color name="color_today_itembackgroud">#c0f7e2</color>
+    <color name="color_tomorrow_backgroud">#81e1ef</color>
+    <color name="color_tomorrow_itembackgroud">#c0f1f6</color>
+    <color name="color_upcoming_backgroud">#eee981</color>
+    <color name="color_upcoming_itembackgroud">#f7f6c0</color>
+
+    <color name="color_status0">#81e1ef</color>
+    <color name="color_status1">#eee981</color>
+    <color name="color_status3">#eba1ae</color>
+    <color name="color_status4">#81eec7</color>
+
+    <color name="light_gray">#fff5f5f5</color>
+    <color name="spinner_bg">#ececec</color>
+    <color name="spinner_text">#666666</color>
+    <color name="today_backgroud_color">#81EEC7</color>
+    <color name="today_sec_bk_color">#C0F7E2</color>
+    <color name="tomorrow_backgroud_color">#81E1EF</color>
+    <color name="tomorrow_sec_bk_color">#C0F1F6</color>
+    <color name="upcoming_backgroud_color">#EEE981</color>
+    <color name="upcoming_sec_bk_color">#F7F6C0</color>
+    <color name="white">#ffffff</color>
+    <color name="Bt_guide">#5BA7E7</color>
+    <color name="Bt_while">#FFF</color>
+<color name="black">#000</color>
+
+    <!-- A dark Holo shade of green -->
+    <color name="holo_green_dark">#009620</color>
+    <!-- A dark Holo shade of red -->
+    <color name="holo_red_dark">#ff0c00</color>
+    <color name="line_gray">#bfbfbf</color>
+    <color name="main_back_color">#f9f9f9</color>
+    <color name="phone_color">#037BFF</color>
+
+
+</resources>

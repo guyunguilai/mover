@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="600dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/money"
+            android:gravity="center"
+            android:text="@string/job_finish_payment_card"
+            android:textColor="@color/color333333"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/card_sp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="$888.88"
+            android:textColor="@color/color333333"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/card_sp"
+            style="@style/TextSpinnerStyle"
+            android:layout_centerInParent="true"
+            android:layout_above="@+id/creadit_card_et"
+            android:text="------"
+            android:layout_weight="1"/>
+
+        <cn.ssic.moverlogic.utils.BankCard
+            android:singleLine="true"
+            android:digits="0123456789"
+            android:id="@+id/creadit_card_et"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Card NO."
+            android:layout_centerInParent="true"
+            style="@style/TextSpinnerStyle" />
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/creadit_card_et"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/ll_change_month"
+                android:background="@color/spinner_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                <!--style="@style/TextSpinnerStyle"-->
+                <TextView
+                    android:id="@+id/month_sp"
+                    android:gravity="right"
+                    style="@style/TextMonthSpinnerStyle"
+                    android:layout_centerInParent="true"
+                    android:text="Month"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:id="@+id/month_right_sp"
+                    android:gravity="left"
+                    style="@style/TextMonthSpinnerStyle"
+                    android:layout_centerInParent="true"
+                    android:text="/Year"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
+
+            <EditText
+                android:digits="0123456789"
+                android:id="@+id/year_sp"
+                android:textColorHint="@color/color666666"
+                style="@style/TextSpinnerStyle"
+                android:text=""
+                android:maxLength="4"
+                android:layout_centerInParent="true"
+                android:hint="CVV"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:text="Amount to Pay :"
+                    android:textColor="@color/color333333"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/pay_credit_amount"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:text="$88.99"
+                    android:textColor="@color/color333333"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:text="Surcharge Percentage :"
+                    android:textColor="@color/color333333"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/pay_credit_surcharge"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:text="5%"
+                    android:textColor="@color/color333333"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:text="Surcharge Amount :"
+                    android:textColor="@color/color333333"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/pay_credit_surcharge_amount"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:text="$88.99"
+                    android:textColor="@color/color333333"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:text="Total After Surcharge :"
+                    android:textColor="@color/color333333"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/pay_credit_total"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:text="$88.99"
+                    android:textColor="@color/color333333"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

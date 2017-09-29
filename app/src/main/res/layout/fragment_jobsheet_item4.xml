@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_refreshview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--<com.andview.refreshview.XScrollView-->
+        <!--android:id="@+id/xscrollview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/JobTitleTextUnderlineStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/job_sheet_job_details" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/JobTitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/job_sheet_job_time" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/JobTagTextStyle"
+                        android:text="@string/job_sheet_job_date" />
+
+                    <TextView
+                        android:id="@+id/job_date"
+                        style="@style/JobInfoTextStyle"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/JobTagTextStyle"
+                        android:text="@string/start_time" />
+
+                    <TextView
+                        android:id="@+id/starttime"
+                        style="@style/JobInfoTextStyle"
+                        android:text="" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/JobTitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/job_sheet_job_type_title" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/JobTagTextStyle"
+                        android:text="@string/job_sheet_job_type" />
+
+                    <TextView
+                        android:id="@+id/job_type"
+                        style="@style/JobInfoTextStyle"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/JobTagTextStyle"
+                        android:text="@string/move_size" />
+
+                    <TextView
+                        android:id="@+id/job_movesize"
+                        style="@style/JobInfoTextStyle"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/JobTagTextStyle"
+                        android:text="@string/job_sheet_job_est3" />
+
+                    <TextView
+                        android:id="@+id/job_est1"
+                        style="@style/JobInfoTextStyle"
+                        android:text="" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/JobTagTextStyle"
+                        android:text="@string/job_sheet_job_est2" />
+
+                    <TextView
+                        android:id="@+id/job_est2"
+                        style="@style/JobInfoTextStyle"
+                        android:text="" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    <!--</com.andview.refreshview.XScrollView>-->
+</ScrollView>

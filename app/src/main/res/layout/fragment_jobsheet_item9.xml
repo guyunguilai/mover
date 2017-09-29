@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_refreshview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--<com.andview.refreshview.XScrollView-->
+        <!--android:id="@+id/xscrollview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                style="@style/JobTitleTextUnderlineStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/job_sheet_job_running_total" />
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/JobTagTextStyle"
+                    android:text="@string/job_sheet_job_total_vehicle_charge" />
+
+                <TextView
+                    android:id="@+id/vehicle_charge"
+                    style="@style/JobInfoTextStyle"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/JobTagTextStyle"
+                    android:text="@string/job_sheet_job_total_extra_charge" />
+
+                <TextView
+                    android:id="@+id/extra_charge"
+                    style="@style/JobInfoTextStyle"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/JobTagTextStyle"
+                    android:text="@string/job_sheet_job_total_discount" />
+
+                <TextView
+                    android:id="@+id/total_discount"
+                    style="@style/JobInfoTextStyle"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/JobTagTextStyle"
+                    android:text="@string/job_sheet_job_sub_total" />
+
+                <TextView
+                    android:id="@+id/sub_total"
+                    style="@style/JobInfoTextStyle"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/JobTagTextStyle"
+                    android:text="@string/job_sheet_job_sub_tax" />
+
+                <TextView
+                    android:id="@+id/tax"
+                    style="@style/JobInfoTextStyle"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/JobTagTextStyle"
+                    android:text="@string/job_sheet_job_total" />
+
+                <TextView
+                    android:id="@+id/total"
+                    style="@style/JobInfoTextStyle"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+    <!--</com.andview.refreshview.XScrollView>-->
+</ScrollView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e6e6e6"></View>
+
+    <RelativeLayout
+        android:id="@+id/job_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/control_panel"
+        android:gravity="center"/>
+
+    <include
+        android:id="@+id/control_panel"
+
+        layout="@layout/control_panel"/>
+
+</RelativeLayout>
